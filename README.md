@@ -1,1 +1,1 @@
-## Site is live on [heroku](https://limitless-eyrie-62523.herokuapp.com/)
+## Site is live on [akaplansoftware.com](http://www.akaplansoftware.com/)

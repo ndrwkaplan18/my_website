@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const weather = require('./weather.js');
 const port = process.env.PORT || 3000;
 
 var app = express();
@@ -37,12 +38,16 @@ hbs.registerHelper('screamIt', (text) => {
     return text.toUpperCase();
 });
 
+hbs.registerHelper('getWeather', (address) => {
+    return weather.getWeather(address);
+})
+
 app.get('/', (req, res) => {
     // res.send('<h1>Hello express!</h1>');
     res.render('home.hbs', {
         pageTitle: 'Welcome page',
         pageClass: 'home',
-        welcomeMessage: 'Welcome to some page somewhere'
+        welcomeMessage: 'Welcome to akaplansoftware.com!'
     });
 });
 
@@ -56,7 +61,8 @@ app.get('/about', (req, res) => {
 app.get('/projects', (req, res) => {
     res.render('projects.hbs', {
         pageTitle: 'My Projects',
-        pageClass: 'projects'
+        pageClass: 'projects',
+        // weather: getWeather()
     });
 })
 

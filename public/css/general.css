@@ -12,9 +12,9 @@ body {
 }
 
 #header {
-    /* background-image: url("/../images/art-background-blank-cropped.jpg"); */
+    background-image: url("/../images/art-background-blank-cropped.jpg");
     background-color: #2d2c5f;
-    color: white;
+    color: black;
     font-size: 50pt;
     height: 60pt;
     border: 1px gray solid;
@@ -22,9 +22,8 @@ body {
 
 #header > img {
     height: 50pt;
-    vertical-align: bottom;
+    vertical-align: text-bottom;
     z-index: -1;
-    padding-right: 0;
 }
 
 #middle {

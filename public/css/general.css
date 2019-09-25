@@ -9,6 +9,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    min-height: 1000px;
 }
 
 #header {
@@ -102,6 +103,17 @@ li {
 
 a {
     color: white;
+    text-decoration: none;
+    border: white solid;
+    background-color: #5ea8ee;
+    padding: 4px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+a:hover {
+    background-color: white;
+    color: #5ea8ee;
 }
 
 footer {

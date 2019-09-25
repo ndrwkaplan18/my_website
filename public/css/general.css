@@ -4,7 +4,7 @@
 @import url("projects.css");
 
 body {
-    /* background-image: url("/../images/close-up-code-coding-160107.jpg") fixed; */
+    background-image: url("/../images/blue-textured.jpg");
     background-color: #5ea8ee;
     text-align: center;
     display: flex;
@@ -79,6 +79,7 @@ body {
     width: 100%;
     border: 1px gray solid;
     font-size: 30pt;
+    color: white;
 }
 
 #main > p{

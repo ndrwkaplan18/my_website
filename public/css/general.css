@@ -4,7 +4,8 @@
 @import url("projects.css");
 
 body {
-    background-color: gray;
+    /* background-image: url("/../images/close-up-code-coding-160107.jpg") fixed; */
+    background-color: #5ea8ee;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -13,9 +14,17 @@ body {
 #header {
     /* background-image: url("/../images/art-background-blank-cropped.jpg"); */
     background-color: #2d2c5f;
+    color: white;
     font-size: 50pt;
     height: 60pt;
     border: 1px gray solid;
+}
+
+#header > img {
+    height: 50pt;
+    vertical-align: bottom;
+    z-index: -1;
+    padding-right: 0;
 }
 
 #middle {
@@ -30,7 +39,8 @@ body {
     border: 1px gray solid;
     text-align: left;
     padding-bottom: 100%;
-    background-color: lightgray;
+    background-color: #2d2c5f;
+    color: white;
 }
 
 #nav > div, #links > div {
@@ -91,7 +101,7 @@ li {
 }
 
 a {
-    color: black;
+    color: white;
 }
 
 footer {

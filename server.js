@@ -45,7 +45,7 @@ hbs.registerHelper('getWeather', (address) => {
 app.get('/', (req, res) => {
     // res.send('<h1>Hello express!</h1>');
     res.render('home.hbs', {
-        pageTitle: 'Welcome page',
+        pageTitle: 'Home',
         pageClass: 'home',
         welcomeMessage: 'Welcome to akaplansoftware.com!'
     });
@@ -53,14 +53,14 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        pageTitle: 'About page',
+        pageTitle: 'About',
         pageClass: 'about'
     });
 });
 
 app.get('/projects', (req, res) => {
     res.render('projects.hbs', {
-        pageTitle: 'My Projects',
+        pageTitle: 'Projects',
         pageClass: 'projects',
         // weather: getWeather()
     });

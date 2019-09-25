@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang=en>
-    <head>
-        <meta charset = "UTF-8">
-        <title>Home</title>
-        <link rel="stylesheet" href="/css/general.css">
-    </head>
-    <body class={{pageClass}}>
+    {{> head}}
+    <body id={{pageClass}}>
         {{> header}}
-        <p>{{screamIt welcomeMessage}}</p>
-
+        <div id="middle">
+            {{> nav}}
+            <div id="main">
+                <p>{{welcomeMessage}}</p>
+            </div>
+            {{> links}}
+        </div>
         {{> footer}}
     </body>
 </html>

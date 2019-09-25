@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang=en>
-    <head>
-        <meta charset = "UTF-8">
-        <title>{{pageTitle}}</title>
-        <link rel="stylesheet" href="/css/general.css">
-    </head>
+    {{> head}}
     <body class={{pageClass}}>
         {{> header}}
-        <p>Hi! I'm Andrew Kaplan.
-            <br>Welcome to my website!
-            <br>I am actively developing this site to learn web development!
-        </p>
-
+        <div id="middle">
+            {{> nav}}
+            <div id="main">
+                <p>Hi! I'm Andrew Kaplan.
+                <br>Welcome to my website!
+                <br>I am actively developing this site to learn web development!
+                </p>
+            </div>
+            {{> links}}
+        </div>
         {{> footer}}
     </body>
 </html>

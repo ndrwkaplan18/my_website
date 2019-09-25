@@ -1,10 +1,85 @@
-@import url("about.css");
+/* @import url("about.css");
 @import url("home.css");
+@import url("maintenance.css"); */
 @import url("projects.css");
-@import url("maintenance.css");
 
-h2, h1, ul, p {
+body {
+    background-color: gray;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    /* background-image: url("/../images/art-background-blank-cropped.jpg"); */
+    background-color: #2d2c5f;
+    font-size: 50pt;
+    height: 60pt;
+    border: 1px gray solid;
+}
+
+#middle {
+    display: flex;
+    flex-direction: row;
+}
+
+#nav, #links {
+    overflow: hidden;
+    width: 200px;
+    height: 100%;
+    border: 1px gray solid;
+    text-align: left;
+    padding-bottom: 100%;
+    background-color: lightgray;
+}
+
+#nav > div, #links > div {
+    font-size: 30pt;
+    position: fixed;
+}
+
+#nav > div {
+    padding-left: 0;
+}
+
+#links > div {
+    padding-right: 0;
+}
+
+#nav > ul, #links > ul{
+    position: fixed;
+    font-size: 25pt;
+    padding-top: 70px;
+    padding-left: 0;
+}
+
+#nav > ul > li, #links > ul > li {
+    padding-bottom: 100px;
+}
+
+#nav > ul > li {
+    padding-left: 20px;
+}
+
+#links > ul > li {
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+#main {
+    width: 100%;
+    border: 1px gray solid;
+    font-size: 30pt;
+}
+
+#main > p{
+    margin-top:200px;
+    margin-bottom:50%;
+}
+
+#footer {
+    border: 1px gray solid;
+    background-color: lightgray;
 }
 
 h2 {
@@ -16,5 +91,12 @@ li {
 }
 
 a {
-    color: lightblue;
+    color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    margin-left: 40%;
+    margin-right: 40%;
 }

@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang=en>
-    <head>
-        <meta charset = "UTF-8">
-        <title>{{pageTitle}}</title>
-        <link rel="stylesheet" href="/css/general.css"/>
-    </head>
+    {{> head}}
     <body class={{pageClass}}>
         {{> header}}
-        
-        <h2>My public git repos:</h2>
-        <ul>
-            <li><a href="https://github.com/ndrwkaplan18/my_website">This website!!</a></li>
-            <li><a href="https://github.com/ndrwkaplan18/node-course">node-course</a></li>
-            <li><a href="https://github.com/ndrwkaplan18/Andrews_Repo">Andrews_Repo</a></li>
-            <li><a href="https://github.com/ndrwkaplan18/WhatTheHechsher">WhatTheHechsher</a></li>
-        </ul>
+        <div id="middle">
+            {{> nav}}
+            <div id="main">
+                <h2>My public git repos:</h2>
+                <ul>
+                    <li><a href="https://github.com/ndrwkaplan18/my_website" target="_blank">This website!!</a></li>
+                    <li><a href="https://github.com/ndrwkaplan18/Andrews_Repo" target="_blank">Andrews_Repo</a></li>
+                </ul>
 
-        <h2>What's the weather in YOUR area?</h2>
-        <div class="weather">
-            <input type="text" id="userInput"=>Enter an address you'd like to know the weather for</input>
-            <button onclick="getWeather()">Submit</button>
+                {{!-- <h2>What's the weather in YOUR area?</h2>
+                <div class="weather">
+                    <input type="text" id="userInput"=>Enter an address you'd like to know the weather for</input>
+                    <button onclick="getWeather()">Submit</button>
+                </div> --}}
+                
+                <p>{{weather}}</p>
+            </div>
+            {{> links}}
         </div>
         
-        <p>{{weather}}</p>
         {{> footer}}
     </body>
 </html>

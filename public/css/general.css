@@ -88,6 +88,10 @@ body {
     margin-bottom:50%;
 }
 
+#main > ul > li {
+    padding-top: 50px;
+}
+
 #footer {
     border: 1px gray solid;
     background-color: lightgray;

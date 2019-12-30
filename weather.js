@@ -6,10 +6,7 @@ var getWeather = async (address) => {
     process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
     var encodedAddress = encodeURIComponent(address);
     return axios.get('http://162.243.171.11/amkapla2/hw7/aks/js/keys.json').then((result) => {
-        // console.log(result.data);
         const {googleApiKey, darkSkyApiKey} = result.data;
-        // console.log("google: ",googleApiKey);
-        // console.log("darkSky: ",darkSkyApiKey);
         var geocodeURL = `https://maps.googleapis.com/maps/api/geocode/json?key=${googleApiKey}&address=${encodedAddress}`;
         var result;
         return axios.get(geocodeURL).then((response) => {
@@ -25,7 +22,6 @@ var getWeather = async (address) => {
                 var temperature = response.data.currently.temperature;
                 var apparentTemperature = response.data.currently.apparentTemperature;
                 result = result + `:<br> Its currently ${temperature}°. It feels like ${apparentTemperature}°.`;
-                // console.log('Inside nested callback final result line 24: ',result); 
                 return result;
             });
     });
@@ -37,8 +33,6 @@ var getWeather = async (address) => {
             console.log(e.message);
         }
     });
-    // console.log('weather before return line 36: ',result); //wa
-    // return result;
 }
 
 module.exports = {

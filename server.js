@@ -2,7 +2,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const hbs = require('hbs');
 const fs = require('fs');
-const weather = require('./weather.js');
+const weather = require('./public/js/weather.js');
 const port = process.env.PORT || 3000;
 
 var app = express();
@@ -64,8 +64,7 @@ function renderProjects(res, weather){
         pageTitle: 'Projects',
         pageClass: 'projects',
         weather,
-        script: `<script src="./js/weather.js" type="text/javascript"></script>
-                 <script src="./js/fifteen.js" type="text/javascript"></script>`
+        script: `<script src="./js/fifteen.js" type="text/javascript"></script>`
     });
 }
 

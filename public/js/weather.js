@@ -1,6 +1,4 @@
-const yargs = require('yargs');
 const axios = require('axios');
-const $ = require('jquery');
 
 var getWeather = async (address) => {
     process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';

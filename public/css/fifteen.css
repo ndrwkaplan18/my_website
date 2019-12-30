@@ -2,8 +2,7 @@
 CSE 190 M, Homework 7 (Fifteen Puzzle)
 */
 
-body, button {
-	font-family: cursive;
+#puzzlearea, button {
 	font-size: 14pt;
 	text-align: center;
 	position: relative;
@@ -15,7 +14,7 @@ body, button {
 	font-size: 40pt;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 50px;
+	margin-top: 10px;
 	position: relative;
 }
 

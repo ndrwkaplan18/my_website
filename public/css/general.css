@@ -9,6 +9,7 @@ body {
     height: fit-content;
     font-size: 25.5vw;
     overflow: hidden;
+    text-align: center;
 }
 
 #header {

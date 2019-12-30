@@ -4,34 +4,37 @@
 		<li><a href="https://github.com/ndrwkaplan18/Andrews_Repo/tree/master/SearchEngine" target="_blank">Searchable Document Store</a></li>
 		<li><a href="https://github.com/ndrwkaplan18/Andrews_Repo/tree/master/Loan_Default_Prediction" target="_blank">Loan Default Prediction</a></li>
 		<li><a href="https://github.com/ndrwkaplan18/Andrews_Repo/tree/master/Stack_Overflow_Scraper" target="_blank">StackOverflow Topic Scraper</a></li>
-		<li><a href="https://github.com/ndrwkaplan18/my_website/blob/master/public/js/weather.js" target="_blank">Weather getter</a></li>
-		<li><a href="https://github.com/ndrwkaplan18/my_website/blob/master/public/js/fifteen.js" target="_blank">Fifteen puzzle</a></li>
+		<li>
+			<a href="https://github.com/ndrwkaplan18/my_website/blob/master/public/js/weather.js" target="_blank">Weather getter</a>
+			<form action="/projects" method="get">
+				<fieldset>
+					<legend>What's the weather in YOUR area?</legend>
+					<div>
+						<input name="address" type="text" size="20" placeholder="address or zipcode" autofocus="autofocus"/>
+						<input type="submit" value="go" />
+					</div>
+					<div id="weather">{{{weather}}}</div>
+				</fieldset>
+			</form>
+		</li>
+		<li>
+			<a href="https://github.com/ndrwkaplan18/my_website/blob/master/public/js/fifteen.js" target="_blank">Fifteen puzzle</a>
+			<div id="puzzlearea">
+				<div>1</div>  <div>2</div>  <div>3</div>  <div>4</div>
+				<div>5</div>  <div>6</div>  <div>7</div>  <div>8</div>
+				<div>9</div>  <div>10</div> <div>11</div> <div>12</div>
+				<div>13</div> <div>14</div> <div>15</div>
+			</div>
+			<div id='dimensions'>
+				<button id='three'>3x3</button>
+				<button id='four'>4x4</button>
+				<button id='five'>5x5</button>
+				<button id='six'>6x6</button>
+			</div>
+			<div id="controls">
+				<button id="shufflebutton">Shuffle</button>
+			</div>
+		</li>
 	</ul>
 
-	<form action="/projects" method="get">
-		<fieldset>
-			<legend>What's the weather in YOUR area?</legend>
-			<div>
-				<input name="address" type="text" size="20" placeholder="address or zipcode" autofocus="autofocus"/>
-				<input type="submit" value="go" />
-			</div>
-			<div id="weather">{{{weather}}}</div>
-		</fieldset>
-	</form>
-	
-	<div id="puzzlearea">
-		<div>1</div>  <div>2</div>  <div>3</div>  <div>4</div>
-		<div>5</div>  <div>6</div>  <div>7</div>  <div>8</div>
-		<div>9</div>  <div>10</div> <div>11</div> <div>12</div>
-		<div>13</div> <div>14</div> <div>15</div>
-	</div>
-	<div id='dimensions'>
-		<button id='three'>3x3</button>
-		<button id='four'>4x4</button>
-		<button id='five'>5x5</button>
-		<button id='six'>6x6</button>
-	</div>
-	<div id="controls">
-		<button id="shufflebutton">Shuffle</button>
-	</div>
 {{> bottom}}

@@ -1,0 +1,55 @@
+/*
+CSE 190 M, Homework 7 (Fifteen Puzzle)
+*/
+
+body, button {
+	font-family: cursive;
+	font-size: 14pt;
+	text-align: center;
+	position: relative;
+}
+
+/* The area that holds the 15 puzzle pieces. */
+#puzzlearea {
+	color: black !important;
+	font-size: 40pt;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	position: relative;
+}
+
+/* This class should be applied to each of the 15 puzzle pieces. */
+.puzzlepiece {
+	border: 5px solid black;
+	width: 90px;
+	height: 90px;
+	position: absolute;
+}
+
+/* This class should be applied to a puzzle piece that can be moved. */
+.movablepiece:hover {
+	border-color: red;
+	color: red;
+}
+
+#throbber {
+	visibility: hidden;
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+}
+  
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
+.win {
+	z-index: 1;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 80pt;
+	animation: blinker 1s linear infinite;
+}

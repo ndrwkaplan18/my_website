@@ -1,10 +1,12 @@
 const express = require('express');
+var bodyParser = require('body-parser');
 const hbs = require('hbs');
 const fs = require('fs');
 const weather = require('./weather.js');
 const port = process.env.PORT || 3000;
 
 var app = express();
+app.use(bodyParser.urlencoded({extended: false}));
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
@@ -43,7 +45,6 @@ hbs.registerHelper('getWeather', (address) => {
 })
 
 app.get('/', (req, res) => {
-    // res.send('<h1>Hello express!</h1>');
     res.render('home.hbs', {
         pageTitle: 'Home',
         pageClass: 'home',
@@ -58,11 +59,33 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.get('/projects', (req, res) => {
+function renderProjects(res, weather){
     res.render('projects.hbs', {
         pageTitle: 'Projects',
         pageClass: 'projects',
-        // weather: getWeather()
+        weather,
+        script: `<script src="./js/weather.js" type="text/javascript"></script>
+                 <script src="./js/fifteen.js" type="text/javascript"></script>`
+    });
+}
+
+app.get('/projects', (req, res) => {
+    if(Object.keys(req.query).length === 0 || req.query.address === ''){
+        renderProjects(res);
+    }
+    else{
+        weather.getWeather(req.query.address).then(result => {
+            console.log('server line 78: ',result);
+            renderProjects(res, result);
+        });
+    }
+})
+
+app.get('/fifteen', (req, res) => {
+    res.render('fifteen.hbs', {
+        pageTitle: 'Fifteen Puzzle',
+        pageClass: 'fifteen',
+        script:'<script src="./js/fifteen.js" type="text/javascript"></script>'
     });
 })
 

@@ -75,7 +75,7 @@ app.get('/projects', (req, res) => {
     }
     else{
         weather.getWeather(req.query.address).then(result => {
-            console.log('server line 78: ',result);
+            // console.log('server line 78: ',result);
             renderProjects(res, result);
         });
     }

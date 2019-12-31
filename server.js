@@ -64,7 +64,9 @@ function renderProjects(res, weather){
         pageTitle: 'Projects',
         pageClass: 'projects',
         weather,
-        script: `<script src="./js/fifteen.js" type="text/javascript"></script>`
+        css: `<link rel="stylesheet" href="/css/fifteen.css">`,
+        script: `<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                 <script src="./js/fifteen.js" type="text/javascript"></script>`
     });
 }
 
@@ -74,18 +76,9 @@ app.get('/projects', (req, res) => {
     }
     else{
         weather.getWeather(req.query.address).then(result => {
-            // console.log('server line 78: ',result);
             renderProjects(res, result);
         });
     }
-})
-
-app.get('/fifteen', (req, res) => {
-    res.render('fifteen.hbs', {
-        pageTitle: 'Fifteen Puzzle',
-        pageClass: 'fifteen',
-        script:'<script src="./js/fifteen.js" type="text/javascript"></script>'
-    });
 })
 
 app.get('/bad', (req, res) => {

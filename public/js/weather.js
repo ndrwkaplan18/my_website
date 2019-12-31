@@ -9,23 +9,23 @@ var getWeather = async (address) => {
         var result;
         return axios.get(geocodeURL).then((response) => {
             if(response.data.status === 'ZERO_RESULTS'){
-                throw new Error('Unable to find that address');
+                return 'Unable to find that address';
             }
             result = 'Weather for ' + response.data.results[0].formatted_address;
             var lat = response.data.results[0].geometry.location.lat;
             var lng = response.data.results[0].geometry.location.lng;
             var weatherURL = `https://api.darksky.net/forecast/${darkSkyApiKey}/${lat},${lng}`;
-    
             return axios.get(weatherURL).then((response) => {
+                var summary = response.data.currently.summary.toLowerCase();
                 var temperature = response.data.currently.temperature;
                 var apparentTemperature = response.data.currently.apparentTemperature;
-                result = result + `:<br> Its currently ${temperature}°. It feels like ${apparentTemperature}°.`;
+                result = result + `:<br> Its currently ${summary}, ${temperature}° with a real feel of ${apparentTemperature}°.`;
                 return result;
             });
     });
     }).catch((e) => {
         if(e.code === 'ENOTFOUND'){
-            result = 'Unable to connect to API servers';
+            return 'Unable to connect to API servers';
         }
         else {
             console.log(e.message);

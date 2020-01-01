@@ -19,7 +19,7 @@ var getWeather = async (address) => {
                 var summary = response.data.currently.summary.toLowerCase();
                 var temperature = response.data.currently.temperature;
                 var apparentTemperature = response.data.currently.apparentTemperature;
-                result = result + `:<br> Its currently ${summary}, ${temperature}° with a real feel of ${apparentTemperature}°.`;
+                result = result + `:<br> It's currently ${summary}, ${temperature}° with a real feel of ${apparentTemperature}°.`;
                 return result;
             });
     });
